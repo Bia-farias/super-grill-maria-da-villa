@@ -79,17 +79,17 @@ resetSpecTimer();
 // 4. GALERIA DE UNIDADES — PREMIUM SLIDER
 // -----------------------------------------------
 const galeriaData = [
-    { title: "Shopping Pátio Paulista",     desc: "Modernidade e praticidade para o seu dia.",                            img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" },
-    { title: "Mooca Plaza Shopping",        desc: "Uma experiência gastronômica completa.",                               img: "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=80" },
-    { title: "Shopping Cidade São Paulo",   desc: "Sabor e conveniência em localização privilegiada.",                   img: "https://images.unsplash.com/photo-1578474846511-04ba529f0b88?auto=format&fit=crop&w=1200&q=80" },
-    { title: "Santana Parque Shopping",     desc: "Qualidade para toda a família.",                                      img: "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=80" },
-    { title: "Shopping Grand Plaza",        desc: "Refeições preparadas com excelência.",                                img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80" },
-    { title: "Shopping Internacional",      desc: "Atendimento rápido e sabor marcante.",                               img: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80" },
-    { title: "Morumbi Shopping",            desc: "Experiência premium em um dos principais shoppings da cidade.",       img: "https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1200&q=80" },
-    { title: "Shopping Aricanduva",         desc: "Tradição e sabor da Maria da Villa.",                                 img: "https://images.unsplash.com/photo-1581349485608-9469926a8e5e?auto=format&fit=crop&w=1200&q=80" },
-    { title: "Shopping Interlagos",         desc: "Culinária inspirada na tradição italiana.",                           img: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&w=1200&q=80" },
-    { title: "Shopping Metrô Itaquera",     desc: "Praticidade sem abrir mão da qualidade.",                            img: "https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?auto=format&fit=crop&w=1200&q=80" },
-    { title: "Shopping Eldorado",           desc: "Receitas especiais para todos os momentos.",                          img: "https://images.unsplash.com/photo-1592861956120-e524c4b0697b?auto=format&fit=crop&w=1200&q=80" }
+    { title: "Shopping Pátio Paulista", desc: "Modernidade e praticidade para o seu dia.", img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" },
+    { title: "Mooca Plaza Shopping", desc: "Uma experiência gastronômica completa.", img: "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=80" },
+    { title: "Shopping Cidade São Paulo", desc: "Sabor e conveniência em localização privilegiada.", img: "https://images.unsplash.com/photo-1578474846511-04ba529f0b88?auto=format&fit=crop&w=1200&q=80" },
+    { title: "Santana Parque Shopping", desc: "Qualidade para toda a família.", img: "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=80" },
+    { title: "Shopping Grand Plaza", desc: "Refeições preparadas com excelência.", img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80" },
+    { title: "Shopping Internacional", desc: "Atendimento rápido e sabor marcante.", img: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80" },
+    { title: "Morumbi Shopping", desc: "Experiência premium em um dos principais shoppings da cidade.", img: "https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1200&q=80" },
+    { title: "Shopping Aricanduva", desc: "Tradição e sabor da Maria da Villa.", img: "https://images.unsplash.com/photo-1581349485608-9469926a8e5e?auto=format&fit=crop&w=1200&q=80" },
+    { title: "Shopping Interlagos", desc: "Culinária inspirada na tradição italiana.", img: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&w=1200&q=80" },
+    { title: "Shopping Metrô Itaquera", desc: "Praticidade sem abrir mão da qualidade.", img: "https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?auto=format&fit=crop&w=1200&q=80" },
+    { title: "Shopping Eldorado", desc: "Receitas especiais para todos os momentos.", img: "https://images.unsplash.com/photo-1592861956120-e524c4b0697b?auto=format&fit=crop&w=1200&q=80" }
 ];
 
 const galContainer = document.getElementById('galeria-container');
@@ -165,4 +165,22 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     e.preventDefault();
     alert('Obrigado pelo seu contato! Nossa equipe corporativa responderá em breve.');
     this.reset();
+});
+// Seleção dos elementos
+const hamburger = document.getElementById('hamburger-btn');
+const navMenu = document.getElementById('nav-menu');
+const navLinks = document.querySelectorAll('.nav-link');
+
+// Função para alternar o menu
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+});
+
+// Fechar o menu quando o usuário clicar em qualquer link
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    });
 });

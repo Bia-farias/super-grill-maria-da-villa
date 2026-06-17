@@ -13,8 +13,13 @@
 
 /* --- Animação Hero Zoom Lento --- */
 @keyframes slow-zoom {
-    0%   { transform: scale(1); }
-    100% { transform: scale(1.08); }
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.08);
+    }
 }
 
 .animate-zoom-slow {
@@ -41,4 +46,110 @@
 .reveal.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ==========================================
+   ESTILOS PARA DISPOSITIVOS MÓVEIS (Mobile)
+   ========================================== */
+@media screen and (max-width: 768px) {
+
+    /* Configuração Geral de Containers */
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* Menu de Navegação Responsivo */
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        /* Esconde o menu para fora da tela */
+        top: 70px;
+        /* Altura do seu header */
+        flex-direction: column;
+        background-color: rgba(10, 10, 10, 0.95);
+        /* Ajuste a cor de fundo do seu tema */
+        backdrop-filter: blur(10px);
+        width: 100%;
+        height: calc(100vh - 70px);
+        text-align: center;
+        transition: 0.3s ease-in-out;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        justify-content: flex-start;
+        padding-top: 50px;
+        gap: 30px;
+    }
+
+    /* Classe que o JavaScript vai ativar */
+    .nav-menu.active {
+        left: 0;
+    }
+
+    /* Exibir o botão hambúrguer */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        background: none;
+        border: none;
+    }
+
+    /* Animação do botão Hambúrguer se transformando em "X" */
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Hero Section (Início) */
+    .hero-grid {
+        display: flex;
+        flex-direction: column-reverse;
+        /* Imagem fica no topo e texto embaixo */
+        text-align: center;
+        gap: 40px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+        /* Diminui o texto para não quebrar feio */
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    /* Seção Sobre Mim */
+    .about-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    /* Boxes de Info (Experiência, Educação, etc) */
+    .about-info-boxes {
+        display: grid;
+        grid-template-columns: 1fr;
+        /* Um card por linha no mobile */
+        gap: 20px;
+    }
+
+    /* Seção de Habilidades (Skills) */
+    .skills-grid {
+        grid-template-columns: 1fr;
+        /* Um card de skill por linha */
+        gap: 20px;
+    }
+
+    /* Grade de Contato */
+    .contact-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
 }
