@@ -1,0 +1,20 @@
+# Arquivos do sistema Windows
+Thumbs.db
+Desktop.ini
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (caso seja adicionado futuramente)
+node_modules/
+npm-debug.log*

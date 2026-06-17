@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Grill Express & Maria da Villa | Premium Gastronomia</title>
+    <!-- Meta tags de SEO -->
+    <meta name="description"
+        content="Sabor, tradição e qualidade nos principais shopping centers de São Paulo. Conheça as especialidades do Super Grill Express e Maria da Villa.">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandPrimary: '#C8102E',
+                        brandSecondary: '#111111',
+                        brandLight: '#F5F5F5',
+                        brandMedium: '#D9D9D9',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'Montserrat', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Fontes Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Estilos Customizados para Efeitos Premium -->
+    <style>
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        @keyframes slow-zoom {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.08);
+            }
+        }
+
+        .animate-zoom-slow {
+            animation: slow-zoom 20s infinite alternate ease-in-out;
+        }
+
+        .fade-slide {
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+        }
+
+        .fade-slide.active {
+            opacity: 1;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-brandSecondary font-sans antialiased overflow-x-hidden">
+
+    <!-- HEADER / NAVIGATION -->
+    <header
+        class="fixed w-full z-50 bg-brandSecondary/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <span class="text-white font-bold tracking-wider text-base sm:text-lg uppercase">SUPER GRILL <span
+                        class="text-brandPrimary">EXPRESS</span></span>
+                <span class="text-white/30 text-base font-light">&</span>
+                <span class="text-gray-300 font-bold tracking-wider text-base sm:text-lg uppercase">MARIA DA
+                    VILLA</span>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-8 text-sm uppercase tracking-wider font-medium">
+                <a href="#inicio" class="text-white hover:text-brandPrimary transition-colors">Início</a>
+                <a href="#historia" class="text-gray-300 hover:text-brandPrimary transition-colors">História</a>
+                <a href="#especialidades"
+                    class="text-gray-300 hover:text-brandPrimary transition-colors">Especialidades</a>
+                <a href="#marcas" class="text-gray-300 hover:text-brandPrimary transition-colors">Marcas</a>
+                <a href="#unidades" class="text-gray-300 hover:text-brandPrimary transition-colors">Unidades</a>
+                <a href="#contato" class="text-gray-300 hover:text-brandPrimary transition-colors">Contato</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none" aria-label="Abrir Menu">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-brandSecondary border-b border-white/10 absolute w-full left-0 px-6 py-4 space-y-4 text-center uppercase tracking-wider text-sm">
+            <a href="#inicio" class="block text-white py-2 border-b border-white/5">Início</a>
+            <a href="#historia" class="block text-white py-2 border-b border-white/5">História</a>
+            <a href="#especialidades" class="block text-white py-2 border-b border-white/5">Especialidades</a>
+            <a href="#marcas" class="block text-white py-2 border-b border-white/5">Marcas</a>
+            <a href="#unidades" class="block text-white py-2 border-b border-white/5">Unidades</a>
+            <a href="#contato" class="block text-white py-2">Contato</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden bg-black">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1920&q=80"
+                alt="Grelhados Premium" class="w-full h-full object-cover animate-zoom-slow">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80"></div>
+        </div>
+
+        <div class="relative z-10 text-center text-white px-4 max-w-5xl mx-auto space-y-8">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
+                <h1
+                    class="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight uppercase border-b-4 md:border-b-0 md:border-r-4 border-brandPrimary pb-4 md:pb-0 md:pr-6 inline-block">
+                    Super Grill Express
+                </h1>
+                <h1
+                    class="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight uppercase text-gray-200 pt-2 md:pt-0 inline-block">
+                    Maria da Villa
+                </h1>
+            </div>
+            <p class="text-lg sm:text-2xl text-gray-300 font-light max-w-3xl mx-auto tracking-wide">
+                Sabor, qualidade e rapidez nos principais shoppings de São Paulo.
+            </p>
+            <div class="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#unidades"
+                    class="w-full sm:w-auto px-8 py-4 bg-brandPrimary hover:bg-red-700 text-white font-semibold uppercase tracking-wider text-xs transition-all transform hover:-translate-y-1 shadow-lg rounded-sm">
+                    Conheça Nossas Lojas
+                </a>
+                <a href="#especialidades"
+                    class="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white hover:bg-white hover:text-brandSecondary text-white font-semibold uppercase tracking-wider text-xs transition-all transform hover:-translate-y-1 rounded-sm">
+                    Ver Especialidades
+                </a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+            <a href="#historia" class="text-white/50 hover:text-white transition-colors"><i
+                    class="fa-solid fa-chevron-down text-2xl"></i></a>
+        </div>
+    </section>
+
+    <!-- SEÇÃO NOSSA HISTÓRIA -->
+    <section id="historia" class="py-24 bg-white reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <span class="h-1 w-12 bg-brandPrimary"></span>
+                        <span class="text-xs uppercase tracking-widest text-brandPrimary font-bold">Tradição &
+                            Excelência</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-brandSecondary uppercase tracking-tight">Nossa
+                        História</h2>
+                    <p class="text-gray-600 leading-relaxed text-lg">
+                        O Super Grill Express nasceu para oferecer refeições de alta qualidade, preparadas com
+                        ingredientes selecionados e servidas com rapidez. Presente nos principais centros comerciais da
+                        cidade, tornou-se referência em sabor, atendimento e excelência gastronômica.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed border-l-4 border-brandPrimary pl-4 italic">
+                        A <span class="font-semibold text-brandSecondary uppercase tracking-wide text-base">Maria da
+                            Villa</span> amplia essa experiência com pratos inspirados na tradição italiana, valorizando
+                        receitas clássicas, ingredientes selecionados e um atendimento acolhedor.
+                    </p>
+                </div>
+                <div class="relative group overflow-hidden shadow-2xl rounded-sm">
+                    <div
+                        class="absolute inset-0 bg-brandPrimary/10 group-hover:bg-transparent transition-colors duration-500 z-10">
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80"
+                        alt="Ambiente Institucional"
+                        class="w-full h-[450px] object-cover transform group-hover:scale-105 transition-transform duration-700">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARROSSEL DE ESPECIALIDADES -->
+    <section id="especialidades" class="py-24 bg-brandLight overflow-hidden relative">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div>
+                <div class="flex items-center space-x-4 mb-2">
+                    <span class="h-1 w-12 bg-brandPrimary"></span>
+                    <span class="text-xs uppercase tracking-widest text-brandPrimary font-bold">Cardápio</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-brandSecondary uppercase">Nossas Especialidades</h2>
+            </div>
+            <!-- Controles do Slider -->
+            <div class="flex space-x-2">
+                <button id="prev-spec"
+                    class="w-12 h-12 border border-brandMedium hover:bg-brandSecondary hover:text-white transition-colors flex items-center justify-center rounded-sm text-brandSecondary"
+                    aria-label="Anterior">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="next-spec"
+                    class="w-12 h-12 border border-brandMedium hover:bg-brandSecondary hover:text-white transition-colors flex items-center justify-center rounded-sm text-brandSecondary"
+                    aria-label="Próximo">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Slider Container -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-[500px] md:h-[400px]">
+            <!-- Slide 1 -->
+            <div
+                class="spec-slide fade-slide active absolute inset-0 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="h-64 md:h-full overflow-hidden shadow-lg rounded-sm relative group">
+                    <img src="https://images.unsplash.com/photo-1546964124-0cce460f38ef?auto=format&fit=crop&w=800&q=80"
+                        alt="Churrasco Executivo"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="space-y-4 p-4 md:p-8">
+                    <h3 class="text-2xl md:text-3xl font-bold text-brandSecondary uppercase">Churrasco Executivo</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">Carnes selecionadas acompanhadas por receitas
+                        preparadas diariamente.</p>
+                    <span
+                        class="inline-block px-3 py-1 bg-brandPrimary/10 text-brandPrimary font-semibold text-xs tracking-wider uppercase rounded-sm">Super
+                        Grill Express</span>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="spec-slide fade-slide absolute inset-0 hidden grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="h-64 md:h-full overflow-hidden shadow-lg rounded-sm relative group">
+                    <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80"
+                        alt="Grill Premium"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="space-y-4 p-4 md:p-8">
+                    <h3 class="text-2xl md:text-3xl font-bold text-brandSecondary uppercase">Grill Premium</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">Cortes especiais grelhados na hora com máxima
+                        qualidade.</p>
+                    <span
+                        class="inline-block px-3 py-1 bg-brandPrimary/10 text-brandPrimary font-semibold text-xs tracking-wider uppercase rounded-sm">Super
+                        Grill Express</span>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="spec-slide fade-slide absolute inset-0 hidden grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="h-64 md:h-full overflow-hidden shadow-lg rounded-sm relative group">
+                    <img src="https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=800&q=80"
+                        alt="Parmegiana Especial"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="space-y-4 p-4 md:p-8">
+                    <h3 class="text-2xl md:text-3xl font-bold text-brandSecondary uppercase">Parmegiana Especial</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">Receita exclusiva com sabor marcante e ingredientes
+                        selecionados.</p>
+                    <span
+                        class="inline-block px-3 py-1 bg-brandPrimary/10 text-brandPrimary font-semibold text-xs tracking-wider uppercase rounded-sm">Super
+                        Grill Express</span>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="spec-slide fade-slide absolute inset-0 hidden grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="h-64 md:h-full overflow-hidden shadow-lg rounded-sm relative group">
+                    <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80"
+                        alt="Massas Maria da Villa"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="space-y-4 p-4 md:p-8">
+                    <h3 class="text-2xl md:text-3xl font-bold text-brandSecondary uppercase">Massas Maria da Villa</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">Massas inspiradas na tradição italiana com molhos
+                        artesanais.</p>
+                    <span
+                        class="inline-block px-3 py-1 bg-brandSecondary/20 text-brandSecondary font-semibold text-xs tracking-wider uppercase rounded-sm">Maria
+                        da Villa</span>
+                </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="spec-slide fade-slide absolute inset-0 hidden grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="h-64 md:h-full overflow-hidden shadow-lg rounded-sm relative group">
+                    <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=800&q=80"
+                        alt="Sobremesas Artesanais"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="space-y-4 p-4 md:p-8">
+                    <h3 class="text-2xl md:text-3xl font-bold text-brandSecondary uppercase">Sobremesas Artesanais</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">Finalização perfeita para uma experiência
+                        gastronômica completa.</p>
+                    <span
+                        class="inline-block px-3 py-1 bg-brandSecondary/10 text-brandSecondary font-semibold text-xs tracking-wider uppercase rounded-sm">Marcas
+                        Parceiras</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Indicadores Inferiores -->
+        <div id="spec-dots" class="flex justify-center space-x-2 mt-8"></div>
+    </section>
+
+    <!-- SEÇÃO DAS MARCAS -->
+    <section id="marcas" class="bg-brandSecondary text-white py-24 px-4 sm:px-6 lg:px-8 reveal">
+        <div
+            class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/10">
+            <!-- Super Grill Express -->
+            <div class="p-8 md:p-12 space-y-4 flex flex-col justify-between group">
+                <div>
+                    <h3
+                        class="text-3xl font-bold uppercase tracking-wider mb-2 text-white group-hover:text-brandPrimary transition-colors">
+                        SUPER GRILL <span class="text-brandPrimary">EXPRESS</span></h3>
+                    <div class="h-1 w-16 bg-brandPrimary mb-6"></div>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        Especialista em grelhados, refeições executivas e pratos preparados na hora com rapidez,
+                        qualidade e sabor.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Maria da Villa -->
+            <div class="p-8 md:p-12 space-y-4 flex flex-col justify-between group">
+                <div>
+                    <h3
+                        class="text-3xl font-bold uppercase tracking-wider mb-2 text-white group-hover:text-brandPrimary transition-colors">
+                        MARIA DA VILLA</h3>
+                    <div class="h-1 w-16 bg-brandPrimary mb-6"></div>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        Uma proposta gastronômica inspirada na culinária italiana, valorizando tradição, ingredientes
+                        selecionados e receitas exclusivas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO ONDE ESTAMOS -->
+    <section id="unidades" class="py-24 bg-white reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <div class="flex justify-center items-center space-x-4 mb-2">
+                    <span class="h-1 w-12 bg-brandPrimary"></span>
+                    <span class="text-xs uppercase tracking-widest text-brandPrimary font-bold">Nossas Lojas</span>
+                    <span class="h-1 w-12 bg-brandPrimary"></span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold text-brandSecondary uppercase">Onde Estamos</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Unidades Super Grill -->
+                <div class="space-y-6">
+                    <h3
+                        class="text-xl font-bold text-brandSecondary uppercase border-b-2 border-brandPrimary pb-3 tracking-wide">
+                        Super Grill Express
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div
+                            class="p-4 bg-brandLight hover:bg-brandSecondary hover:text-white transition-all duration-300 rounded-sm flex items-center space-x-3 group border-l-2 border-brandPrimary">
+                            <i class="fa-solid fa-location-dot text-brandPrimary group-hover:text-white"></i>
+                            <span class="font-medium text-sm tracking-wide">Shopping Pátio Paulista</span>
+                        </div>
+                        <div
+                            class="p-4 bg-brandLight hover:bg-brandSecondary hover:text-white transition-all duration-300 rounded-sm flex items-center space-x-3 group border-l-2 border-brandPrimary">
+                            <i class="fa-solid fa-location-dot text-brandPrimary group-hover:text-white"></i>
+                            <span class="font-medium text-sm tracking-wide">Mooca Plaza Shopping</span>
+                        </div>
+                        <div
+                            class="p-4 bg-brandLight hover:bg-brandSecondary hover:text-white transition-all duration-300 rounded-sm flex items-center space-x-3 group border-l-2 border-brandPrimary">
+                            <i class="fa-solid fa-location-dot text-brandPrimary group-hover:text-white"></i>
+                            <span class="font-medium text-sm tracking-wide">Shopping Cidade São Paulo</span>
+                        </div>
+                        <div
+                            class="p-4 bg-brandLight hover:bg-brandSecondary hover:text-white transition-all duration-300 rounded-sm flex items-center space-x-3 group border-l-2 border-brandPrimary">
+                            <i class="fa-solid fa-location-dot text-brandPrimary group-hover:text-white"></i>
+                            <span class="font-medium text-sm tracking-wide">Santana Parque Shopping</span>
+                        </div>
+                        <div
+                            class="p-4 bg-brandLight hover:bg-brandSecondary hover:text-white transition-all duration-300 rounded-sm flex items-center space-x-3 group border-l-2 border-brandPrimary">
+                            <i class="fa-solid fa-location-dot text-brandPrimary group-hover:text-white"></i>
+                            <span class="font-medium text-sm tracking-wide">Shopping Grand Plaza</span>
+                        </div>
+                        <div
+                            class="p-4 bg-brandLight hover:bg-brandSecondary hover:text-white transition-all duration-300 rounded-sm flex items-center space-x-3 group border-l-2 border-brandPrimary">
+                            <i class="fa-solid fa-location-dot text-brandPrimary group-hover:text-white"></i>
+                            <span class="font-medium text-sm tracking-wide">Shopping Internacional (Guarulhos)</span>
+                        </div>
+                        <div
+                            class="p-4 bg-brandLight hover:bg-brandSecondary hover:text-white transition-all duration-300 rounded-sm flex items-center space-x-3 group border-l-2 border-brandPrimary col-span-1 sm:col-span-2">
+                            <i class="fa-solid fa-location-dot text-brandPrimary group-hover:text-white"></i>
+                            <span class="font-medium text-sm tracking-wide">Morumbi Shopping</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unidades Maria da Villa -->
+                <div class="space-y-6">
+                    <h3
+                        class="text-xl font-bold text-brandSecondary uppercase border-b-2 border-brandSecondary pb-3 tracking-wide">
+                        Maria da Villa
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div
+                            class="p-4 bg-brandLight hover:bg-brandSecondary hover:text-white transition-all duration-300 rounded-sm flex items-center space-x-3 group border-l-2 border-brandSecondary">
+                            <i class="fa-solid fa-location-dot text-brandSecondary group-hover:text-white"></i>
+                            <span class="font-medium text-sm tracking-wide">Shopping Aricanduva</span>
+                        </div>
+                        <div
+                            class="p-4 bg-brandLight hover:bg-brandSecondary hover:text-white transition-all duration-300 rounded-sm flex items-center space-x-3 group border-l-2 border-brandSecondary">
+                            <i class="fa-solid fa-location-dot text-brandSecondary group-hover:text-white"></i>
+                            <span class="font-medium text-sm tracking-wide">Shopping Interlagos</span>
+                        </div>
+                        <div
+                            class="p-4 bg-brandLight hover:bg-brandSecondary hover:text-white transition-all duration-300 rounded-sm flex items-center space-x-3 group border-l-2 border-brandSecondary">
+                            <i class="fa-solid fa-location-dot text-brandSecondary group-hover:text-white"></i>
+                            <span class="font-medium text-sm tracking-wide">Shopping Metrô Itaquera</span>
+                        </div>
+                        <div
+                            class="p-4 bg-brandLight hover:bg-brandSecondary hover:text-white transition-all duration-300 rounded-sm flex items-center space-x-3 group border-l-2 border-brandSecondary">
+                            <i class="fa-solid fa-location-dot text-brandSecondary group-hover:text-white"></i>
+                            <span class="font-medium text-sm tracking-wide">Shopping Eldorado</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIA DE UNIDADES (SLIDER) -->
+    <section class="py-20 bg-brandSecondary text-white relative overflow-hidden h-[500px]">
+        <div id="galeria-container" class="w-full h-full relative">
+            <div class="galeria-slide absolute inset-0 opacity-0 transition-opacity duration-1000 flex items-center justify-center bg-cover bg-center active"
+                style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80');">
+                <div class="absolute inset-0 bg-black/60"></div>
+                <div class="relative z-10 text-center px-4 max-w-xl">
+                    <h3 class="text-3xl font-bold uppercase mb-2">Shopping Pátio Paulista</h3>
+                    <p class="text-brandMedium">Modernidade e praticidade para o seu dia.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Controles Galeria -->
+        <button id="prev-gal"
+            class="absolute left-4 top-1/2 -translate-y-1/2 z-20 text-white/50 hover:text-white text-2xl"
+            aria-label="Anterior"><i class="fa-solid fa-circle-chevron-left"></i></button>
+        <button id="next-gal"
+            class="absolute right-4 top-1/2 -translate-y-1/2 z-20 text-white/50 hover:text-white text-2xl"
+            aria-label="Próximo"><i class="fa-solid fa-circle-chevron-right"></i></button>
+    </section>
+
+    <!-- SEÇÃO DIFERENCIAIS -->
+    <section class="py-24 bg-brandLight reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-brandSecondary uppercase">Por Que Escolher Nossas Marcas?
+                </h2>
+                <div class="h-1 w-20 bg-brandPrimary mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="bg-white p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 border-t-4 border-brandPrimary rounded-sm text-center space-y-4">
+                    <div class="text-brandPrimary text-3xl"><i class="fa-solid fa-leaf"></i></div>
+                    <h3 class="text-lg font-bold uppercase text-brandSecondary">Ingredientes Selecionados</h3>
+                    <p class="text-gray-500 text-sm">Matérias-primas de alta qualidade.</p>
+                </div>
+                <!-- Card 2 -->
+                <div
+                    class="bg-white p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 border-t-4 border-brandSecondary rounded-sm text-center space-y-4">
+                    <div class="text-brandSecondary text-3xl"><i class="fa-solid fa-bolt"></i></div>
+                    <h3 class="text-lg font-bold uppercase text-brandSecondary">Atendimento Ágil</h3>
+                    <p class="text-gray-500 text-sm">Praticidade sem abrir mão da excelência.</p>
+                </div>
+                <!-- Card 3 -->
+                <div
+                    class="bg-white p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 border-t-4 border-brandPrimary rounded-sm text-center space-y-4">
+                    <div class="text-brandPrimary text-3xl"><i class="fa-solid fa-utensils"></i></div>
+                    <h3 class="text-lg font-bold uppercase text-brandSecondary">Receitas Exclusivas</h3>
+                    <p class="text-gray-500 text-sm">Sabores únicos e memoráveis.</p>
+                </div>
+                <!-- Card 4 -->
+                <div
+                    class="bg-white p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 border-t-4 border-brandSecondary rounded-sm text-center space-y-4">
+                    <div class="text-brandSecondary text-3xl"><i class="fa-solid fa-map-location-dot"></i></div>
+                    <h3 class="text-lg font-bold uppercase text-brandSecondary">Presença Estratégica</h3>
+                    <p class="text-gray-500 text-sm">Localização nos principais shoppings da região.</p>
+                </div>
+                <!-- Card 5 -->
+                <div
+                    class="bg-white p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 border-t-4 border-brandPrimary rounded-sm text-center space-y-4">
+                    <div class="text-brandPrimary text-3xl"><i class="fa-solid fa-star"></i></div>
+                    <h3 class="text-lg font-bold uppercase text-brandSecondary">Qualidade Consistente</h3>
+                    <p class="text-gray-500 text-sm">Padrão elevado em todas as unidades.</p>
+                </div>
+                <!-- Card 6 -->
+                <div
+                    class="bg-white p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 border-t-4 border-brandSecondary rounded-sm text-center space-y-4">
+                    <div class="text-brandSecondary text-3xl"><i class="fa-solid fa-crown"></i></div>
+                    <h3 class="text-lg font-bold uppercase text-brandSecondary">Experiência Premium</h3>
+                    <p class="text-gray-500 text-sm">Ambiente acolhedor e refeições diferenciadas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO CONTATO -->
+    <section id="contato" class="py-24 bg-white reveal">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-bold text-brandSecondary uppercase">Fale Conosco</h2>
+                <div class="h-1 w-12 bg-brandPrimary mx-auto mt-2"></div>
+            </div>
+
+            <form id="contact-form" class="space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label for="name"
+                            class="block text-xs uppercase tracking-wider font-semibold text-brandSecondary mb-2">Nome</label>
+                        <input type="text" id="name" required
+                            class="w-full bg-brandLight border border-brandMedium/50 px-4 py-3 text-sm focus:outline-none focus:border-brandPrimary transition-colors rounded-sm">
+                    </div>
+                    <div>
+                        <label for="email"
+                            class="block text-xs uppercase tracking-wider font-semibold text-brandSecondary mb-2">E-mail</label>
+                        <input type="email" id="email" required
+                            class="w-full bg-brandLight border border-brandMedium/50 px-4 py-3 text-sm focus:outline-none focus:border-brandPrimary transition-colors rounded-sm">
+                    </div>
+                </div>
+                <div>
+                    <label for="phone"
+                        class="block text-xs uppercase tracking-wider font-semibold text-brandSecondary mb-2">Telefone</label>
+                    <input type="tel" id="phone" required
+                        class="w-full bg-brandLight border border-brandMedium/50 px-4 py-3 text-sm focus:outline-none focus:border-brandPrimary transition-colors rounded-sm">
+                </div>
+                <div>
+                    <label for="message"
+                        class="block text-xs uppercase tracking-wider font-semibold text-brandSecondary mb-2">Mensagem</label>
+                    <textarea id="message" rows="5" required
+                        class="w-full bg-brandLight border border-brandMedium/50 px-4 py-3 text-sm focus:outline-none focus:border-brandPrimary transition-colors rounded-sm"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit"
+                        class="w-full sm:w-auto px-12 py-4 bg-brandSecondary hover:bg-brandPrimary text-white font-bold uppercase tracking-widest text-xs transition-colors shadow-lg rounded-sm">
+                        Enviar Mensagem
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-brandSecondary text-gray-400 py-16 border-t border-white/10">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-center md:text-left">
+            <div class="space-y-2">
+                <h4 class="text-white font-bold tracking-wider text-lg uppercase">SUPER GRILL <span
+                        class="text-brandPrimary">EXPRESS</span></h4>
+                <h4 class="text-gray-300 font-bold tracking-wider text-lg uppercase">MARIA DA VILLA</h4>
+                <p class="text-xs pt-2 text-gray-500">Sabor, tradição e qualidade em cada refeição.</p>
+            </div>
+            <div class="flex flex-col space-y-2 uppercase text-xs tracking-wider font-medium">
+                <a href="#inicio" class="hover:text-white transition-colors">Início</a>
+                <a href="#historia" class="hover:text-white transition-colors">Nossa História</a>
+                <a href="#especialidades" class="hover:text-white transition-colors">Especialidades</a>
+                <a href="#marcas" class="hover:text-white transition-colors">Marcas</a>
+                <a href="#unidades" class="hover:text-white transition-colors">Unidades</a>
+                <a href="#contato" class="hover:text-white transition-colors">Contato</a>
+            </div>
+            <div class="space-y-4">
+                <h5 class="text-white text-xs uppercase tracking-widest font-semibold">Conecte-se Conosco</h5>
+                <div class="flex justify-center md:justify-start space-x-6 text-xl">
+                    <a href="https://instagram.com" target="_blank" rel="noopener"
+                        class="hover:text-brandPrimary transition-colors" aria-label="Instagram"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener"
+                        class="hover:text-brandPrimary transition-colors" aria-label="Facebook"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://wa.me/5511999999999" target="_blank" rel="noopener"
+                        class="hover:text-brandPrimary transition-colors" aria-label="WhatsApp"><i
+                            class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-white/5 text-center text-xs text-gray-600">
+            © 2026 Super Grill Express. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <a href="https://wa.me/5511999999999" target="_blank" rel="noopener"
+        class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20ba5a] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl transition-transform hover:scale-110"
+        aria-label="Fale Conosco no WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- LÓGICA JAVASCRIPT -->
+    <script>
+        // Menu Mobile Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Efeito Header ao Scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('bg-black', 'shadow-xl');
+            } else {
+                header.classList.remove('bg-black', 'shadow-xl');
+            }
+        });
+
+        // Carrossel de Especialidades
+        const specSlides = document.querySelectorAll('.spec-slide');
+        const prevSpecBtn = document.getElementById('prev-spec');
+        const nextSpecBtn = document.getElementById('next-spec');
+        const specDotsContainer = document.getElementById('spec-dots');
+        let specIndex = 0;
+        let specInterval;
+
+        specSlides.forEach((_, idx) => {
+            const dot = document.createElement('button');
+            dot.className = `w-3 h-3 rounded-full transition-colors ${idx === 0 ? 'bg-brandPrimary' : 'bg-brandMedium'}`;
+            dot.setAttribute('aria-label', `Ir para slide ${idx + 1}`);
+            dot.addEventListener('click', () => showSpecSlide(idx));
+            specDotsContainer.appendChild(dot);
+        });
+
+        const specDots = specDotsContainer.querySelectorAll('button');
+
+        function showSpecSlide(index) {
+            specSlides[specIndex].classList.add('hidden');
+            specSlides[specIndex].classList.remove('active', 'grid');
+            specDots[specIndex].classList.replace('bg-brandPrimary', 'bg-brandMedium');
+
+            specIndex = (index + specSlides.length) % specSlides.length;
+
+            specSlides[specIndex].classList.remove('hidden');
+            specSlides[specIndex].classList.add('active', 'grid');
+            specDots[specIndex].classList.replace('bg-brandMedium', 'bg-brandPrimary');
+            resetSpecTimer();
+        }
+
+        function nextSpecSlide() { showSpecSlide(specIndex + 1); }
+        function prevSpecSlide() { showSpecSlide(specIndex - 1); }
+        function resetSpecTimer() {
+            clearInterval(specInterval);
+            specInterval = setInterval(nextSpecSlide, 5000);
+        }
+
+        nextSpecBtn.addEventListener('click', nextSpecSlide);
+        prevSpecBtn.addEventListener('click', prevSpecSlide);
+        resetSpecTimer();
+
+        // Galeria de Unidades Premium Slider
+        const galeriaData = [
+            { title: "Shopping Pátio Paulista", desc: "Modernidade e praticidade para o seu dia.", img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" },
+            { title: "Mooca Plaza Shopping", desc: "Uma experiência gastronômica completa.", img: "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=80" },
+            { title: "Shopping Cidade São Paulo", desc: "Sabor e conveniência em localização privilegiada.", img: "https://images.unsplash.com/photo-1578474846511-04ba529f0b88?auto=format&fit=crop&w=1200&q=80" },
+            { title: "Santana Parque Shopping", desc: "Qualidade para toda a família.", img: "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=80" },
+            { title: "Shopping Grand Plaza", desc: "Refeições preparadas com excelência.", img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80" },
+            { title: "Shopping Internacional", desc: "Atendimento rápido e sabor marcante.", img: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80" },
+            { title: "Morumbi Shopping", desc: "Experiência premium em um dos principais shoppings da cidade.", img: "https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1200&q=80" },
+            { title: "Shopping Aricanduva", desc: "Tradição e sabor da Maria da Villa.", img: "https://images.unsplash.com/photo-1581349485608-9469926a8e5e?auto=format&fit=crop&w=1200&q=80" },
+            { title: "Shopping Interlagos", desc: "Culinária inspirada na tradição italiana.", img: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&w=1200&q=80" },
+            { title: "Shopping Metrô Itaquera", desc: "Praticidade sem abrir mão da qualidade.", img: "https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?auto=format&fit=crop&w=1200&q=80" },
+            { title: "Shopping Eldorado", desc: "Receitas especiais para todos os momentos.", img: "https://images.unsplash.com/photo-1592861956120-e524c4b0697b?auto=format&fit=crop&w=1200&q=80" }
+        ];
+
+        const galContainer = document.getElementById('galeria-container');
+        galContainer.innerHTML = '';
+
+        galeriaData.forEach((slide, idx) => {
+            const slideEl = document.createElement('div');
+            slideEl.className = `galeria-slide absolute inset-0 transition-all duration-1000 flex items-center justify-center bg-cover bg-center transform ${idx === 0 ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-95 z-0 pointer-events-none'}`;
+            slideEl.style.backgroundImage = `url('${slide.img}')`;
+            slideEl.innerHTML = `
+                <div class="absolute inset-0 bg-black/60"></div>
+                <div class="relative z-10 text-center px-4 max-w-2xl transition-all duration-700 transform ${idx === 0 ? 'translate-y-0' : 'translate-y-8'}">
+                    <h3 class="text-2xl sm:text-4xl font-bold uppercase mb-2 tracking-wide">${slide.title}</h3>
+                    <p class="text-brandMedium text-sm sm:text-base font-light">${slide.desc}</p>
+                </div>
+            `;
+            galContainer.appendChild(slideEl);
+        });
+
+        let galIndex = 0;
+        const galSlides = document.querySelectorAll('.galeria-slide');
+        let galInterval;
+
+        function showGalSlide(index) {
+            galSlides[galIndex].classList.replace('opacity-100', 'opacity-0');
+            galSlides[galIndex].classList.replace('scale-100', 'scale-95');
+            galSlides[galIndex].classList.add('pointer-events-none');
+            galSlides[galIndex].querySelector('div.relative').classList.replace('translate-y-0', 'translate-y-8');
+
+            galIndex = (index + galSlides.length) % galSlides.length;
+
+            galSlides[galIndex].classList.replace('opacity-0', 'opacity-100');
+            galSlides[galIndex].classList.replace('scale-95', 'scale-100');
+            galSlides[galIndex].classList.remove('pointer-events-none');
+            galSlides[galIndex].querySelector('div.relative').classList.replace('translate-y-8', 'translate-y-0');
+            resetGalTimer();
+        }
+
+        function nextGalSlide() { showGalSlide(galIndex + 1); }
+        function prevGalSlide() { showGalSlide(galIndex - 1); }
+        function resetGalTimer() {
+            clearInterval(galInterval);
+            galInterval = setInterval(nextGalSlide, 6000);
+        }
+
+        document.getElementById('next-gal').addEventListener('click', nextGalSlide);
+        document.getElementById('prev-gal').addEventListener('click', prevGalSlide);
+        resetGalTimer();
+
+        // Animação Scroll Reveal
+        const reveals = document.querySelectorAll('.reveal');
+        function checkReveal() {
+            const triggerBottom = window.innerHeight * 0.85;
+            reveals.forEach(reveal => {
+                const revealTop = reveal.getBoundingClientRect().top;
+                if (revealTop < triggerBottom) {
+                    reveal.classList.add('visible');
+                }
+            });
+        }
+        window.addEventListener('scroll', checkReveal);
+        window.addEventListener('load', checkReveal);
+
+        // Formulário de Contato
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Obrigado pelo seu contato! Nossa equipe corporativa responderá em breve.');
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>
