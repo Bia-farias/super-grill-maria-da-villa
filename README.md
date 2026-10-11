@@ -4,7 +4,7 @@
 
 ## 🌐 Acesse o Site
 
-[Ver site ao vivo →](https://bia-farias.github.io/super-grill-express-maria-da-villa/)
+[Ver site ao vivo →](https://super-grill-maria-da-villa.vercel.app)
 
 ## 📋 Sobre o Projeto
 
